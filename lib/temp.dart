@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-//hahahahhahha
 
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -106,12 +105,10 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('Take a picture'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Stack(
         children: [
           // Camera preview
           FutureBuilder<void>(
@@ -134,16 +131,19 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             },
           ),
           // Bottom row for buttons
-
-          Row(
+          Positioned(
+            bottom: 0.0,
+            left: 0.0,
+            right: 0.0,
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Flash button
                 IconButton(
-                  icon: Icon(_useFlash ? Icons.flash_on : Icons.flash_off,),
-                  color: Colors.white,
-                  iconSize: 40,
-
+                  icon: Icon(
+                    _useFlash ? Icons.flash_on : Icons.flash_off,
+                    color: Colors.white,
+                  ),
                   onPressed: () {
                     setState(() {
                       _useFlash = !_useFlash;
@@ -154,10 +154,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                 ),
                 // Camera button (centered)
                 const Spacer(),
-                IconButton(
-                  icon: const Icon(Icons.circle_outlined),
-                  color: Colors.white,
-                  iconSize: 60,
+                FloatingActionButton(
+                  child: const Icon(Icons.camera_alt),
                   onPressed: () async {
                     try {
                       // Take picture
@@ -174,7 +172,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                 IconButton(
                   icon: const Icon(Icons.photo_library),
                   color: Colors.white,
-                  iconSize: 40,
                   onPressed: () async {
                     final pickedImage = await ImagePicker().pickImage(source: ImageSource.gallery);
                     _handleImageSelection(pickedImage);
@@ -182,7 +179,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                 ),
               ],
             ),
-
+          ),
         ],
       ),
     );

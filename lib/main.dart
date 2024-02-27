@@ -10,12 +10,45 @@ import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart
 import 'package:image_picker/image_picker.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      ChangeNotifierProvider<MyappState>(
+          create: (context) => MyappState(),
+          child: const MyApp()),
+  );
+
 }
 
 
-class MyapppState extends ChangeNotifier{
+class MyappState extends ChangeNotifier{
   var ingredients = <String>[];
+  Future<void> extractIngredients(String imagePath) async {
+    // Import needed for mlkit
+    final inputImage = InputImage.fromFilePath(imagePath);
+
+    final textRecognizer = TextRecognizer(script: TextRecognitionScript.latin);
+
+    final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
+
+    // Identify lines containing "Ingredients:" (adjust logic as needed)
+    final ingredientsLines = recognizedText.blocks
+        .where((block) => block.lines.any((line) => line.text.startsWith("Ingredients:")))
+        .expand((block) => block.lines);
+
+    // Extract comma-separated ingredients from the first line (modify logic as needed)
+    var ingredients = "";
+    if (ingredientsLines.isNotEmpty) {
+      ingredients = ingredientsLines.first.text.split("Ingredients:")[1].trim();
+      ingredients = ingredients.split(",").map((ingredient) => ingredient.trim()).join(", ");
+    }
+
+    // Update ingredients list
+    this.ingredients = ingredients.split(", ");
+    print(ingredients);
+    // Notify listeners about changes in ingredients
+    notifyListeners();
+    textRecognizer.close();
+  }
+
 }
 
 class MyApp extends StatelessWidget{
@@ -206,18 +239,29 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 }
 
 class DisplayImageScreen extends StatelessWidget {
+
   final String imagePath;
 
   const DisplayImageScreen({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
+    var appState = context.watch<MyappState>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image'),
       ),
-      body: Center(
-        child: Image.file(File(imagePath)),
+      body: Column(
+        children: [
+          Image.file(File(imagePath)),
+          ElevatedButton(
+            onPressed:(){
+              appState.extractIngredients(imagePath);
+            },
+            child: const Text("Scan Ingredients"),
+          )
+        ]
       ),
     );
   }

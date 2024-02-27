@@ -43,7 +43,9 @@ class MyappState extends ChangeNotifier{
 
     // Update ingredients list
     this.ingredients = ingredients.split(", ");
-    print(ingredients);
+    for (String i in this.ingredients){
+      print(i);
+    }
     // Notify listeners about changes in ingredients
     notifyListeners();
     textRecognizer.close();

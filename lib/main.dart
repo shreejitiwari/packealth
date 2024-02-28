@@ -21,6 +21,7 @@ void main() {
 
 class MyappState extends ChangeNotifier{
   var ingredients = <String>[];
+  String _extractedText = "";
   Future<void> extractIngredients(String imagePath) async {
     // Import needed for mlkit
     final inputImage = InputImage.fromFilePath(imagePath);
@@ -30,7 +31,10 @@ class MyappState extends ChangeNotifier{
     final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
 
     // Identify lines containing "Ingredients:" (adjust logic as needed)
+
+/*
     final ingredientsLines = recognizedText.blocks
+
         .where((block) => block.lines.any((line) => line.text.startsWith("Ingredients:")))
         .expand((block) => block.lines);
 
@@ -46,12 +50,31 @@ class MyappState extends ChangeNotifier{
     for (String i in this.ingredients){
       print(i);
     }
+*/
+
     // Notify listeners about changes in ingredients
+
+    String text = recognizedText.text;
+    for (TextBlock block in recognizedText.blocks) {
+      //each block of text/section of text
+      final String text = block.text;
+      print("block of text: ");
+      print(text);
+      for (TextLine line in block.lines) {
+        //each line within a text block
+        for (TextElement element in line.elements) {
+          //each word within a line
+          _extractedText += element.text + " ";
+        }
+      }
+    }
+    _extractedText += "\n\n";
+
     notifyListeners();
     textRecognizer.close();
+    }
   }
 
-}
 
 class MyApp extends StatelessWidget{
   const MyApp({super.key,});
@@ -240,12 +263,17 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   }
 }
 
-class DisplayImageScreen extends StatelessWidget {
+class DisplayImageScreen extends StatefulWidget {
 
   final String imagePath;
 
   const DisplayImageScreen({super.key, required this.imagePath});
 
+  @override
+  State<DisplayImageScreen> createState() => _DisplayImageScreenState();
+}
+
+class _DisplayImageScreenState extends State<DisplayImageScreen> {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyappState>();
@@ -256,15 +284,17 @@ class DisplayImageScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.file(File(imagePath)),
+          Image.file(File(widget.imagePath)),
           ElevatedButton(
             onPressed:(){
-              appState.extractIngredients(imagePath);
+              appState.extractIngredients(widget.imagePath);
             },
             child: const Text("Scan Ingredients"),
           )
         ]
       ),
     );
+
+
   }
 }

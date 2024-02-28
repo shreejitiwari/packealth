@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:io';
 
 //cheking
+// openfoodfacts
+import 'package:openfoodfacts/openfoodfacts.dart';
 
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
@@ -19,64 +21,30 @@ void main() {
 }
 
 
-class MyappState extends ChangeNotifier{
+class MyappState extends ChangeNotifier {
   var ingredients = <String>[];
   String _extractedText = "";
-  Future<void> extractIngredients(String imagePath) async {
-    // Import needed for mlkit
-    final inputImage = InputImage.fromFilePath(imagePath);
 
-    final textRecognizer = TextRecognizer(script: TextRecognitionScript.latin);
+  Future<String?> extractIngredient() async {
+    // a registered user login for https://world.openfoodfacts.org/ is required
+    User myUser = User(userId: 'togik76255@ricorit.com', password: '.CbggJyS894MuY.');
 
-    final RecognizedText recognizedText = await textRecognizer.processImage(inputImage);
+    // query the OpenFoodFacts API
+    OcrIngredientsResult response = await OpenFoodAPIClient.extractIngredients(
+        myUser, '0041220576920', OpenFoodFactsLanguage.ENGLISH);
 
-    // Identify lines containing "Ingredients:" (adjust logic as needed)
-
-/*
-    final ingredientsLines = recognizedText.blocks
-
-        .where((block) => block.lines.any((line) => line.text.startsWith("Ingredients:")))
-        .expand((block) => block.lines);
-
-    // Extract comma-separated ingredients from the first line (modify logic as needed)
-    var ingredients = "";
-    if (ingredientsLines.isNotEmpty) {
-      ingredients = ingredientsLines.first.text.split("Ingredients:")[1].trim();
-      ingredients = ingredients.split(",").map((ingredient) => ingredient.trim()).join(", ");
+    if (response.status != 0) {
+      throw Exception("Text can't be extracted.");
     }
-
-    // Update ingredients list
-    this.ingredients = ingredients.split(", ");
-    for (String i in this.ingredients){
-      print(i);
-    }
-*/
-
-    // Notify listeners about changes in ingredients
-
-    String text = recognizedText.text;
-    for (TextBlock block in recognizedText.blocks) {
-      //each block of text/section of text
-      final String text = block.text;
-      print("block of text: ");
-      print(text);
-      for (TextLine line in block.lines) {
-        //each line within a text block
-        for (TextElement element in line.elements) {
-          //each word within a line
-          _extractedText += element.text + " ";
-        }
-      }
-    }
-    _extractedText += "\n\n";
-
-    notifyListeners();
-    textRecognizer.close();
-    }
+    return response.ingredientsTextFromImage;
   }
+}
 
 
-class MyApp extends StatelessWidget{
+
+
+
+  class MyApp extends StatelessWidget{
   const MyApp({super.key,});
 
 
@@ -287,7 +255,7 @@ class _DisplayImageScreenState extends State<DisplayImageScreen> {
           Image.file(File(widget.imagePath)),
           ElevatedButton(
             onPressed:(){
-              appState.extractIngredients(widget.imagePath);
+              appState.extractIngredient();
             },
             child: const Text("Scan Ingredients"),
           )

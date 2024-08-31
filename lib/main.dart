@@ -256,7 +256,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         MaterialPageRoute(
           builder: (context) => DisplayImageScreen(imagePath: _pickedImage!.path),
         ),
-      ).then((_) => setState(() { // Reset _pickedImage after returning from DisplayImageScreen
+      ).then((_) => setState(() { // Reset _pickedImage after -- returning from DisplayImageScreen
         _pickedImage = null;
       }));
     }

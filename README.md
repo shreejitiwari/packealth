@@ -1,16 +1,7 @@
 ## 🎬 Demo Video (Private)
 
-[Watch Packealth demo here](## 🎬 Demo Video (Private)
-
-[Watch MediRush demo here](https://www.youtube.com/shorts/8Fc3vU0wrPM)  
+[Watch Packealth demo here](https://www.youtube.com/shorts/8Fc3vU0wrPM)  
 *(Accessible only to project visitors)*
-
-***
-)  
-*(Accessible only to project visitors)*
-
-***
-
 ***
 
 ## 🥗 Packealth: Instant Food Ingredient & Nutrition Analyzer  

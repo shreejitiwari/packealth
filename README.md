@@ -2,6 +2,10 @@
 
 [Watch Packealth demo here](https://www.youtube.com/shorts/8Fc3vU0wrPM)  
 *(Accessible only to project visitors)*
+
+# 🖼️ App Screenshots
+See the app screens:
+[Google Drive Screenshot Gallery](https://drive.google.com/drive/folders/1KYVSxLlUy2yy0dBuD2RQg_GSVbpH_aGK?usp=sharing)
 ***
 
 ## 🥗 Packealth: Instant Food Ingredient & Nutrition Analyzer  

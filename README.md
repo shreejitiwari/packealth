@@ -7,13 +7,15 @@
 
 ## 📱 App Screens & Workflow
 
-<img src="images/1.jpg" alt="Analysis Progress" width="240"/>
-<img src="images/2.jpg" alt="Splash Screen" width="240"/>
-<img src="images/3.jpg" alt="Home & Ingredient Insights" width="240"/>
-<img src="images/4.jpg" alt="Camera Scanner" width="240"/>
-<img src="images/5.jpg" alt="Nutrition Screen" width="240"/>
-<img src="images/6.jpg" alt="Allergen Risks" width="240"/>
-<img src="images/7.jpg" alt="Ingredient Risk Warnings" width="240"/>
+<p float="left">
+  <img src="images/1.jpg" alt="Analysis Progress" width="200"/>
+  <img src="images/2.jpg" alt="Splash Screen" width="200"/>
+  <img src="images/3.jpg" alt="Home & Ingredient Insights" width="200"/>
+  <img src="images/4.jpg" alt="Camera Scanner" width="200"/>
+  <img src="images/5.jpg" alt="Nutrition Screen" width="200"/>
+  <img src="images/6.jpg" alt="Allergen Risks" width="200"/>
+  <img src="images/7.jpg" alt="Ingredient Risk Warnings" width="200"/>
+</p>
 
 # 🖼️ App Screenshots
 See the app screens:

@@ -3,6 +3,53 @@
 [Watch Packealth demo here](https://www.youtube.com/shorts/8Fc3vU0wrPM)  
 *(Accessible only to project visitors)*
 
+# 🥫 Packealth: The Ingredient Scanner
+
+## 📱 App Screens & Workflow
+Below are screenshot highlights showing the complete Packealth user journey, from scanning a product to viewing detailed health and nutrition insights.
+---
+
+### 1. Analysis Progress
+![Analysis Progress](./images/1.jpg)  
+Soft pink progress screen with "Analysis In Progress..." and a loading indicator.
+
+---
+
+### 2. Splash Screen
+![Splash Screen](./images/2.jpg)  
+Packealth app welcome screen with a modern design, logo, and a "SCAN" button.
+
+---
+
+### 3. Home & Ingredient Insights
+![Home & Ingredient Insights](./images/3.jpg)  
+Detected product ingredients, a pie chart for ingredient breakdown by weight, and tabbed navigation for ingredients, nutrition, warnings, and allergens.
+
+---
+
+### 4. Camera Scanner
+![Camera Scanner](./images/4.jpg)  
+Live package-scanning interface allowing users to capture product images in-store.
+
+---
+
+### 5. Nutrition Screen
+![Nutrition Screen](./images/5.jpg)  
+Nutritional breakdown per 100g with bar graph, summary text, and a data source link.
+
+---
+
+### 6. Allergen Risks
+![Allergen Risks](./images/6.jpg)  
+Health risks and allergens overview with a color-coded allergen table and advisory guidance.
+
+---
+
+### 7. Ingredient Risk Warnings
+![Ingredient Risk Warnings](./images/7.jpg)  
+Ingredient warnings, risk overview, and color-coded table helping users make safe food choices.
+
+
 # 🖼️ App Screenshots
 See the app screens:
 [Google Drive Screenshot Gallery](https://drive.google.com/drive/folders/1KYVSxLlUy2yy0dBuD2RQg_GSVbpH_aGK?usp=sharing)

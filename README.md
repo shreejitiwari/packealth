@@ -9,33 +9,34 @@
 
 ---
 
-![Analysis Progress](images/1.jpg)
+<img src="images/1.jpg" alt="Analysis Progress" width="240"/>
 
 ---
 
-![Splash Screen](images/2.jpg)
+<img src="images/2.jpg" alt="Splash Screen" width="240"/>
 
 ---
 
-![Home & Ingredient Insights](images/3.jpg)
+<img src="images/3.jpg" alt="Home & Ingredient Insights" width="240"/>
 
 ---
 
-![Camera Scanner](images/4.jpg)
+<img src="images/4.jpg" alt="Camera Scanner" width="240"/>
 
 ---
 
-![Nutrition Screen](images/5.jpg)
+<img src="images/5.jpg" alt="Nutrition Screen" width="240"/>
 
 ---
 
-![Allergen Risks](images/6.jpg)
+<img src="images/6.jpg" alt="Allergen Risks" width="240"/>
 
 ---
 
-![Ingredient Risk Warnings](images/7.jpg)
+<img src="images/7.jpg" alt="Ingredient Risk Warnings" width="240"/>
 
 ---
+
 
 
 

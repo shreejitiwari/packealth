@@ -5,49 +5,53 @@
 
 # 🥫 Packealth: The Ingredient Scanner
 
+# 🥫 Packealth: The Ingredient Scanner
+
 ## 📱 App Screens & Workflow
-Below are screenshot highlights showing the complete Packealth user journey, from scanning a product to viewing detailed health and nutrition insights.
+
 ---
 
 ### 1. Analysis Progress
-![Analysis Progress](./images/1.jpg)  
-Soft pink progress screen with "Analysis In Progress..." and a loading indicator.
+<img src="images/1.jpg" alt="Analysis Progress" width="240"/><br>
+Soft pink progress screen with “Analysis In Progress...” and loading indicator.
 
 ---
 
 ### 2. Splash Screen
-![Splash Screen](./images/2.jpg)  
-Packealth app welcome screen with a modern design, logo, and a "SCAN" button.
+<img src="images/2.jpg" alt="Splash Screen" width="240"/><br>
+App welcome screen with a modern design, logo, and SCAN button.
 
 ---
 
 ### 3. Home & Ingredient Insights
-![Home & Ingredient Insights](./images/3.jpg)  
-Detected product ingredients, a pie chart for ingredient breakdown by weight, and tabbed navigation for ingredients, nutrition, warnings, and allergens.
+<img src="images/3.jpg" alt="Home & Ingredient Insights" width="240"/><br>
+Product ingredients, ingredient breakdown, and tabbed food info navigation.
 
 ---
 
 ### 4. Camera Scanner
-![Camera Scanner](./images/4.jpg)  
-Live package-scanning interface allowing users to capture product images in-store.
+<img src="images/4.jpg" alt="Camera Scanner" width="240"/><br>
+Live package-scanning UI for capturing product images in-store.
 
 ---
 
 ### 5. Nutrition Screen
-![Nutrition Screen](./images/5.jpg)  
-Nutritional breakdown per 100g with bar graph, summary text, and a data source link.
+<img src="images/5.jpg" alt="Nutrition Screen" width="240"/><br>
+Nutrition breakdown per 100g with bar graph, summary, and data source.
 
 ---
 
 ### 6. Allergen Risks
-![Allergen Risks](./images/6.jpg)  
-Health risks and allergens overview with a color-coded allergen table and advisory guidance.
+<img src="images/6.jpg" alt="Allergen Risks" width="240"/><br>
+Health risks and allergen guidance with a color-coded allergen table.
 
 ---
 
 ### 7. Ingredient Risk Warnings
-![Ingredient Risk Warnings](./images/7.jpg)  
-Ingredient warnings, risk overview, and color-coded table helping users make safe food choices.
+<img src="images/7.jpg" alt="Ingredient Risk Warnings" width="240"/><br>
+Ingredient warnings, dietary risk overview, and color-coded risk table.
+
+---
 
 
 # 🖼️ App Screenshots

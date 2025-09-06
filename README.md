@@ -5,53 +5,38 @@
 
 # 🥫 Packealth: The Ingredient Scanner
 
-# 🥫 Packealth: The Ingredient Scanner
-
 ## 📱 App Screens & Workflow
 
 ---
 
-### 1. Analysis Progress
-<img src="images/1.jpg" alt="Analysis Progress" width="240"/><br>
-Soft pink progress screen with “Analysis In Progress...” and loading indicator.
+![Analysis Progress](images/1.jpg)
 
 ---
 
-### 2. Splash Screen
-<img src="images/2.jpg" alt="Splash Screen" width="240"/><br>
-App welcome screen with a modern design, logo, and SCAN button.
+![Splash Screen](images/2.jpg)
 
 ---
 
-### 3. Home & Ingredient Insights
-<img src="images/3.jpg" alt="Home & Ingredient Insights" width="240"/><br>
-Product ingredients, ingredient breakdown, and tabbed food info navigation.
+![Home & Ingredient Insights](images/3.jpg)
 
 ---
 
-### 4. Camera Scanner
-<img src="images/4.jpg" alt="Camera Scanner" width="240"/><br>
-Live package-scanning UI for capturing product images in-store.
+![Camera Scanner](images/4.jpg)
 
 ---
 
-### 5. Nutrition Screen
-<img src="images/5.jpg" alt="Nutrition Screen" width="240"/><br>
-Nutrition breakdown per 100g with bar graph, summary, and data source.
+![Nutrition Screen](images/5.jpg)
 
 ---
 
-### 6. Allergen Risks
-<img src="images/6.jpg" alt="Allergen Risks" width="240"/><br>
-Health risks and allergen guidance with a color-coded allergen table.
+![Allergen Risks](images/6.jpg)
 
 ---
 
-### 7. Ingredient Risk Warnings
-<img src="images/7.jpg" alt="Ingredient Risk Warnings" width="240"/><br>
-Ingredient warnings, dietary risk overview, and color-coded risk table.
+![Ingredient Risk Warnings](images/7.jpg)
 
 ---
+
 
 
 # 🖼️ App Screenshots
